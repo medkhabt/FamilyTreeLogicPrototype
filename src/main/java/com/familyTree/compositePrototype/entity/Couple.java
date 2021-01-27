@@ -122,7 +122,47 @@ public class Couple implements CoupleComposite{
 		this.root = root; 
 //		this.partner.setParents(root);
 		this.realChild.setParents(root);
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+//		result = prime * result + ((children == null) ? 0 : children.hashCode());
+		result = prime * result + ((partner == null) ? 0 : partner.hashCode());
+		result = prime * result + ((realChild == null) ? 0 : realChild.hashCode());
+		result = prime * result + ((root == null) ? 0 : root.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Couple other = (Couple) obj;
+		if (partner == null) {
+			if (other.partner != null)
+				return false;
+		} else if (!partner.equals(other.partner))
+			return false;
+		if (realChild == null) {
+			if (other.realChild != null)
+				return false;
+		} else if (!realChild.equals(other.realChild))
+			return false;
+		if (root == null) {
+			if (other.root != null)
+				return false;
+		} else if (!root.equals(other.root))
+			return false;
+		return true;
 	} 
+	
+	
 	
 	
 	
