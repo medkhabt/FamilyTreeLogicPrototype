@@ -11,6 +11,8 @@ public interface CoupleComposite {
 	public void setParents(CoupleComposite root); 
 	public String getSpacing(); 
 	public void setSpacing(String spacing); 
+	public boolean equals(Object cc);
+	public int hashCode(); 
 	
 	
 }
